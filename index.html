@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+  <title>LEANCODE | O Método Científico de Transformação Corporal</title>
+  <meta name="description" content="Perca gordura, acelere seu metabolismo e molde seu corpo em 12 semanas sem dietas extremas ou sacrifícios impossíveis. De $15 por apenas $7.">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LEANCODE | O Método Científico de Transformação Corporal">
+  <meta property="og:description" content="Como perder gordura, moldar o corpo e recuperar a sua confiança sem dietas extremas. O método, não a moda.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2309090b' stroke='%23d4af37' stroke-width='3'/><polygon points='50,20 22,74 78,74' fill='none' stroke='%23d4af37' stroke-width='3'/><circle cx='50' cy='20' r='3' fill='%23d4af37'/><circle cx='22' cy='74' r='3' fill='%23d4af37'/><circle cx='78' cy='74' r='3' fill='%23d4af37'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              200: '#F5E7C8',
+              300: '#E5C58B',
+              400: '#D4AF37',
+              500: '#C5A880',
+              600: '#A68650',
+            },
+            brand: {
+              dark: '#09090B',
+              card: '#121217',
+              cardLight: '#181820',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #09090B;
+      color: #F4F4F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF5E4 0%, #D4AF37 50%, #C5A880 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-btn {
+      background: linear-gradient(135deg, #E5C58B 0%, #D4AF37 50%, #B88E28 100%);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gold-btn:hover {
+      box-shadow: 0 0 45px rgba(212, 175, 55, 0.75);
+      transform: translateY(-2px);
+    }
+
+    /* 3D EBOOK ROTATION ANIMATIONS */
+    .perspective-1200 {
+      perspective: 1200px;
+    }
+
+    .preserve-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out;
+    }
+
+    /* Continuous 3D rotation & floating */
+    @keyframes spinAndFloat3D {
+      0% {
+        transform: translateY(0px) rotateY(-22deg) rotateX(6deg);
+      }
+      25% {
+        transform: translateY(-10px) rotateY(-5deg) rotateX(3deg);
+      }
+      50% {
+        transform: translateY(-18px) rotateY(18deg) rotateX(5deg);
+      }
+      75% {
+        transform: translateY(-8px) rotateY(4deg) rotateX(7deg);
+      }
+      100% {
+        transform: translateY(0px) rotateY(-22deg) rotateX(6deg);
+      }
+    }
+
+    .animate-spin-ebook {
+      animation: spinAndFloat3D 10s ease-in-out infinite;
+    }
+
+    /* Full 360 Spin on command */
+    @keyframes fullSpin360 {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .spin-360-active {
+      animation: fullSpin360 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    }
+
+    /* PARALLAX ELEMENTS STYLES */
+    .parallax-layer {
+      will-change: transform;
+      transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    /* Ambient pulse */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.1); }
+    }
+
+    .glow-pulse {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    /* Reveal animation on scroll: rising from bottom to top */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================================
+       ELEGANT SHINE / SHIMMER EFFECT (PREMIUM LUXURY STYLING)
+       ======================================================== */
+    
+    /* Base keyframe for smooth light reflection sweep across elements */
+    @keyframes shimmerSweep {
+      0% {
+        transform: translateX(-160%) skewX(-25deg);
+      }
+      22%, 100% {
+        transform: translateX(260%) skewX(-25deg);
+      }
+    }
+
+    /* Keyframe for slightly more prominent sweep on the checkout button */
+    @keyframes shimmerSweepCheckout {
+      0% {
+        transform: translateX(-160%) skewX(-22deg);
+      }
+      24%, 100% {
+        transform: translateX(260%) skewX(-22deg);
+      }
+    }
+
+    /* Keyframe for subtle luxury sweep across benefit and feature cards */
+    @keyframes shimmerSweepCard {
+      0% {
+        transform: translateX(-180%) skewX(-20deg);
+      }
+      20%, 100% {
+        transform: translateX(280%) skewX(-20deg);
+      }
+    }
+
+    /* Shimmer on Hotmart Purchase Button (Most evident, high conversion) */
+    .shimmer-btn-checkout {
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+
+    .shimmer-btn-checkout::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      animation: shimmerSweepCheckout 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      will-change: transform;
+    }
+
+    /* Shimmer on Secondary & Hero Buttons (Subtle elegance) */
+    .shimmer-btn {
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      animation: shimmerSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      will-change: transform;
+    }
+
+    /* Shimmer on Benefit & Feature Cards */
+    .shimmer-card {
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+
+    .shimmer-card::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 50%;
+      height: 140%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(212, 175, 55, 0.08) 25%,
+        rgba(255, 255, 255, 0.16) 50%,
+        rgba(212, 175, 55, 0.08) 75%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      animation: shimmerSweepCard 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      will-change: transform;
+      z-index: 1;
+    }
+
+    /* Staggered animation delays for grid cards */
+    .shimmer-delay-1::after {
+      animation-delay: 1.2s;
+    }
+
+    .shimmer-delay-2::after {
+      animation-delay: 2.6s;
+    }
+
+    .shimmer-delay-3::after {
+      animation-delay: 4s;
+    }
+
+    /* Respect user's reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .shimmer-btn-checkout::after,
+      .shimmer-btn::after,
+      .shimmer-card::after {
+        animation: none !important;
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-[#D4AF37]/30 selection:text-white" id="main-body">
+
+  <!-- ================= TOP URGENCY COUNTDOWN BAR ================= -->
+  <aside aria-label="Aviso de oferta especial" class="w-full bg-gradient-to-r from-[#17120a] via-[#241a0d] to-[#17120a] border-b border-[#D4AF37]/30 text-xs py-2 px-4 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center justify-center sm:justify-start gap-2.5 w-full sm:w-auto">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#D4AF37]"></span>
+        </span>
+        <span class="font-bold uppercase tracking-wider text-[#E5C58B]">OFERTA RELÂMPAGO:</span>
+        <span class="text-zinc-300">
+          Antes: <span class="line-through text-zinc-500 font-semibold">$15</span> | 
+          Agora: <strong class="text-white text-sm">$7</strong>
+          <span class="text-zinc-400 text-[11px]">(aprox. R$ 39)</span>
+        </span>
+      </div>
+
+      <!-- Realtime Timer in Bar -->
+      <div class="flex items-center justify-center sm:justify-end gap-3 text-[11px] text-zinc-300 w-full sm:w-auto">
+        <div class="flex items-center gap-1 font-mono bg-black/60 px-2.5 py-1 rounded border border-[#D4AF37]/30">
+          <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="text-zinc-400">EXPIRA EM:</span>
+          <span class="text-[#E5C58B] font-bold text-xs timer-display">14:59</span>
+        </div>
+        <a href="#oferta" class="hidden md:inline font-bold text-[#D4AF37] hover:underline">
+          Ver Condição Especial &darr;
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="w-full bg-[#09090B]/90 backdrop-blur-md border-b border-white/[0.06] sticky top-[37px] z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="inline-flex items-center gap-3">
+        <svg viewBox="0 0 200 200" class="w-10 h-10 drop-shadow-[0_0_12px_rgba(212,175,55,0.3)] shrink-0" fill="none">
+          <circle cx="100" cy="100" r="96" fill="#0C0C0E" stroke="#C5A880" stroke-width="2.5" />
+          <circle cx="100" cy="100" r="92" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.4" />
+          <polygon points="100,38 46,144 154,144" stroke="#C5A880" stroke-width="2.2" fill="none" stroke-linejoin="round" />
+          <line x1="100" y1="40" x2="100" y2="144" stroke="#C5A880" stroke-width="1.2" stroke-dasharray="2.5 3" stroke-opacity="0.6" />
+          <circle cx="100" cy="38" r="4.5" fill="#C5A880" />
+          <circle cx="46" cy="144" r="4" fill="#C5A880" />
+          <circle cx="154" cy="144" r="4" fill="#C5A880" />
+          <line x1="56" y1="152" x2="144" y2="152" stroke="#A88B63" stroke-width="1.5" stroke-opacity="0.8" />
+        </svg>
+        <div class="flex flex-col leading-none">
+          <div class="flex items-baseline gap-1">
+            <span class="font-extrabold text-lg text-white tracking-tight">LEAN</span>
+            <span class="font-semibold text-lg text-[#D4AF37] tracking-wider">CODE</span>
+          </div>
+          <span class="text-[9px] font-medium tracking-[0.25em] text-zinc-400 uppercase">O MÉTODO • NÃO A MODA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-300">
+        <a href="#problema" class="hover:text-[#D4AF37] transition-colors">O Problema</a>
+        <a href="#pilares" class="hover:text-[#D4AF37] transition-colors">Os 3 Pilares</a>
+        <a href="#cronograma" class="hover:text-[#D4AF37] transition-colors">12 Semanas</a>
+        <a href="#capitulos" class="hover:text-[#D4AF37] transition-colors">Capítulos</a>
+        <a href="#avaliacoes" class="hover:text-[#D4AF37] transition-colors">Avaliações</a>
+        <!-- EBOOK LINK IN NAVBAR -->
+        <a href="ebook-preview.html" target="_blank" class="text-[#E5C58B] hover:text-white flex items-center gap-1 font-semibold">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Abrir E-book
+        </a>
+      </div>
+
+      <!-- Header Scroll Anchor to Offer Section -->
+      <a href="#oferta" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider border border-[#D4AF37]/50 text-[#E5C58B] hover:bg-[#D4AF37]/10 shimmer-btn transition-all">
+        <span>VER OFERTA ($7)</span>
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION WITH PARALLAX & ROTATING EBOOK ================= -->
+  <section class="relative pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden" id="hero-section">
+    
+    <!-- PARALLAX BACKGROUND LAYERS -->
+    <div class="parallax-layer absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#D4AF37]/20 via-transparent to-transparent pointer-events-none blur-3xl -z-10" data-parallax-speed="0.25"></div>
+    <div class="parallax-layer absolute -top-24 -left-24 w-96 h-96 bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="-0.3"></div>
+    <div class="parallax-layer absolute top-1/2 -right-24 w-80 h-80 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="0.15"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Copywriting with rising reveal animations -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          
+          <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A1A22] border border-[#D4AF37]/35 text-xs text-[#E5C58B] mb-5 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <span class="font-semibold tracking-wider uppercase text-[11px]">MÉTODO • DISCIPLINA • RESULTADO</span>
+          </div>
+
+          <h1 class="reveal text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.15] mb-5">
+            O seu corpo não falhou.
+            <span class="gold-gradient-text block mt-1">O método das dietas tradicionais falhou.</span>
+          </h1>
+
+          <p class="reveal text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-xl mb-7">
+            Como queimar gordura, acelerar seu metabolismo e moldar seu corpo em <strong>12 semanas</strong> com nutrição estratégica e treinos eficientes de 30 minutos — <strong>sem passar fome, sem cortar tudo o que você gosta e sem horas intermináveis de esteira</strong>.
+          </p>
+
+          <!-- Key Bullets with Parallax Hover -->
+          <div class="reveal w-full max-w-xl grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8 text-left text-xs sm:text-sm text-zinc-300">
+            <div class="parallax-card flex items-center gap-2.5 p-2.5 rounded-lg bg-zinc-900/70 border border-zinc-800 transition-transform hover:-translate-y-1">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Déficit Calórico Flexível:</strong> Sem passar fome</span>
+            </div>
+            <div class="parallax-card flex items-center gap-2.5 p-2.5 rounded-lg bg-zinc-900/70 border border-zinc-800 transition-transform hover:-translate-y-1">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Apenas 2 a 3 Treinos/sem:</strong> Foco em resultado</span>
+            </div>
+            <div class="parallax-card flex items-center gap-2.5 p-2.5 rounded-lg bg-zinc-900/70 border border-zinc-800 transition-transform hover:-translate-y-1">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Fim do Efeito Sanfona:</strong> Ciência biológica</span>
+            </div>
+            <div class="parallax-card flex items-center gap-2.5 p-2.5 rounded-lg bg-zinc-900/70 border border-zinc-800 transition-transform hover:-translate-y-1">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>1 Refeição Livre/sem:</strong> Sem culpa e com adesão</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="reveal w-full max-w-md flex flex-col items-center lg:items-start gap-3">
+            <div class="flex flex-col sm:flex-row items-center gap-3 w-full">
+              <a href="#oferta" class="flex-1 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider gold-btn shimmer-btn text-black text-center">
+                <span>VER OFERTA COM DESCONTO</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </a>
+
+              <!-- DIRECT EBOOK PREVIEW LINK BUTTON -->
+              <a href="ebook-preview.html" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-zinc-900 border border-[#D4AF37]/50 text-white hover:bg-zinc-800 shimmer-btn transition-all text-center">
+                <svg class="w-4 h-4 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>LER PRÉVIA DO E-BOOK</span>
+              </a>
+            </div>
+
+            <!-- Price Anchor Info -->
+            <div class="flex flex-col sm:flex-row items-center gap-2 text-xs text-zinc-400 mt-2">
+              <div class="flex items-center gap-2 font-medium">
+                <span>Antes: <span class="line-through text-zinc-500 font-semibold">$15</span></span>
+                <span class="text-zinc-600">|</span>
+                <span>Agora: <strong class="text-white font-bold text-sm">$7</strong></span>
+                <span class="text-zinc-400 text-[11px]">(aprox. R$ 39)</span>
+              </div>
+              <span class="hidden sm:inline text-zinc-600">•</span>
+              <span class="text-[#C5A880] font-semibold">Acesso Vitalício</span>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-[11px] text-zinc-400">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Checkout Seguro Hotmart
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Download Imediato em PDF
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                7 Dias de Garantia
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: 3D ROTATING EBOOK & PARALLAX HOVER -->
+        <div class="lg:col-span-5 flex flex-col items-center" id="book-interactive-area">
+          
+          <!-- Perspective Box with Interactive 3D Rotator -->
+          <div class="relative w-full max-w-[340px] sm:max-w-[370px] aspect-[1/1.42] perspective-1200 select-none">
+            
+            <!-- Glow behind book with parallax movement -->
+            <div id="parallax-glow" class="parallax-layer absolute -inset-4 bg-gradient-to-r from-[#d4af37]/30 via-[#c5a880]/20 to-transparent blur-3xl opacity-80 pointer-events-none rounded-full glow-pulse" data-parallax-speed="0.4"></div>
+            
+            <!-- Book Container with 3D Rotation -->
+            <div id="rotating-book" class="preserve-3d animate-spin-ebook relative w-full h-full rounded-r-2xl rounded-l-md shadow-[25px_25px_60px_rgba(0,0,0,0.95),0_0_30px_rgba(212,175,55,0.25)] overflow-hidden border-y border-r border-[#C5A880]/40 bg-[#0C0C0E] flex cursor-grab active:cursor-grabbing">
+              
+              <!-- Spine with 3D gold sheen -->
+              <div class="w-5 sm:w-6 h-full bg-gradient-to-r from-[#070709] via-[#1a1a22] to-[#0d0d12] border-r border-[#C5A880]/30 flex flex-col items-center justify-between py-6 shrink-0 relative">
+                <span class="text-[8px] font-mono tracking-widest text-[#A1A1AA] rotate-90 uppercase whitespace-nowrap">LEANCODE</span>
+                <div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shadow-[0_0_8px_#D4AF37]"></div>
+                <span class="text-[7px] font-mono tracking-widest text-[#C5A880]/70 rotate-90 uppercase whitespace-nowrap">EDIÇÃO 2026</span>
+              </div>
+
+              <!-- Cover / Page View -->
+              <div id="book-content" class="flex-1 h-full p-5 sm:p-6 flex flex-col justify-between relative bg-gradient-to-br from-[#0D0D12] via-[#09090C] to-[#050507]">
+                
+                <!-- Dynamic Lighting Reflection on Cover -->
+                <div id="specular-light" class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.05] to-transparent pointer-events-none"></div>
+
+                <!-- Tab: Cover -->
+                <div id="view-cover" class="flex-1 flex flex-col justify-between text-center">
+                  <div class="pt-2">
+                    <p class="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#A1A1AA] font-semibold">MÉTODO • DISCIPLINA • RESULTADO</p>
+                    <div class="w-12 h-[1px] bg-[#C5A880]/40 mx-auto mt-2"></div>
+                  </div>
+
+                  <div class="my-auto py-4">
+                    <div class="text-4xl sm:text-5xl font-black italic tracking-tighter text-white leading-none">LEAN</div>
+                    <div class="text-4xl sm:text-5xl font-black italic tracking-tighter text-[#D4AF37] leading-none mt-1">CODE</div>
+                    
+                    <p class="mt-4 text-[10px] text-zinc-300 font-normal leading-relaxed max-w-[220px] mx-auto">
+                      Como perder gordura, moldar o corpo e recuperar a sua confiança sem dietas extremas ou sacrifícios impossíveis.
+                    </p>
+
+                    <div class="my-5 flex justify-center opacity-90">
+                      <div class="w-16 h-16">
+                        <svg viewBox="0 0 200 200" class="w-full h-full" fill="none">
+                          <circle cx="100" cy="100" r="95" stroke="#C5A880" stroke-width="2" stroke-opacity="0.4" />
+                          <polygon points="100,38 46,144 154,144" stroke="#D4AF37" stroke-width="2.5" fill="none" />
+                          <circle cx="100" cy="38" r="4.5" fill="#D4AF37" />
+                          <circle cx="46" cy="144" r="4" fill="#D4AF37" />
+                          <circle cx="154" cy="144" r="4" fill="#D4AF37" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="italic text-xs text-[#E5C58B] font-medium tracking-wide">&ldquo;O método. Não a moda.&rdquo;</div>
+                  </div>
+
+                  <div class="pb-1">
+                    <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-[#C5A880]/30 to-transparent mb-2"></div>
+                    <p class="text-[8px] sm:text-[9px] tracking-widest uppercase text-zinc-400 font-medium">EDIÇÃO PREMIUM • TRANSFORMAÇÃO CORPORAL</p>
+                    <p class="text-[7px] text-zinc-600 tracking-wider mt-0.5">leancode.com</p>
+                  </div>
+                </div>
+
+                <!-- Tab: Summary -->
+                <div id="view-summary" class="hidden flex-1 flex flex-col text-left">
+                  <div class="border-b border-[#C5A880]/30 pb-2 mb-2">
+                    <span class="text-[9px] uppercase tracking-widest text-[#D4AF37] font-bold">Sumário do Livro</span>
+                    <h4 class="text-xs font-bold text-white">10 Capítulos Práticos</h4>
+                  </div>
+                  <div class="space-y-1 text-[10px] text-zinc-300">
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">01</strong> Verdade do Emagrecimento</span><span class="text-zinc-500 font-mono text-[9px]">p. 12</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">02</strong> Os 3 Pilares do Método</span><span class="text-zinc-500 font-mono text-[9px]">p. 24</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">03</strong> Nutrição Sem Restrições</span><span class="text-zinc-500 font-mono text-[9px]">p. 38</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">04</strong> Treino Eficiente (Menos Tempo)</span><span class="text-zinc-500 font-mono text-[9px]">p. 56</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">05</strong> Hormônios & Metabolismo</span><span class="text-zinc-500 font-mono text-[9px]">p. 72</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">06</strong> Mentalidade de Atleta</span><span class="text-zinc-500 font-mono text-[9px]">p. 88</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">07</strong> Plano de 12 Semanas</span><span class="text-zinc-500 font-mono text-[9px]">p. 104</span></div>
+                    <div class="flex justify-between py-0.5 border-b border-zinc-800"><span><strong class="text-[#D4AF37]">08</strong> Receitas Práticas Premium</span><span class="text-zinc-500 font-mono text-[9px]">p. 126</span></div>
+                  </div>
+                  <div class="mt-auto pt-2 text-[9px] text-center text-[#C5A880] italic">&ldquo;Quem tem método não improvisa.&rdquo;</div>
+                </div>
+
+                <!-- Tab: Pillars -->
+                <div id="view-pillars" class="hidden flex-1 flex flex-col text-left">
+                  <div class="border-b border-[#C5A880]/30 pb-2 mb-2">
+                    <span class="text-[9px] uppercase tracking-widest text-[#D4AF37] font-bold">Capítulo 02</span>
+                    <h4 class="text-xs font-bold text-white">Os 3 Pilares Fundamentais</h4>
+                  </div>
+                  <div class="space-y-2 text-[10px]">
+                    <div class="p-1.5 rounded bg-zinc-900 border border-[#C5A880]/30">
+                      <strong class="text-[#E5C58B]">I. Nutrição Estratégica</strong>
+                      <p class="text-zinc-400 text-[9px]">Déficit flexível (300-500 kcal), proteína 1.8-2.2g/kg e carb timing.</p>
+                    </div>
+                    <div class="p-1.5 rounded bg-zinc-900 border border-blue-500/30">
+                      <strong class="text-blue-300">II. Treino Eficiente</strong>
+                      <p class="text-zinc-400 text-[9px]">2 a 3 treinos curtos superam 6 de cardio. Sobrecarga de +2.5%/sem.</p>
+                    </div>
+                    <div class="p-1.5 rounded bg-zinc-900 border border-orange-500/30">
+                      <strong class="text-orange-300">III. Mentalidade de Sistema</strong>
+                      <p class="text-zinc-400 text-[9px]">Consistência sobre perfeição. Sistema definitivo para não voltar ao peso.</p>
+                    </div>
+                  </div>
+                  <div class="mt-auto pt-1 text-[9px] text-center text-zinc-400 italic">Três pilares. Um sistema. Uma transformação.</div>
+                </div>
+
+                <!-- Tab: Timeline -->
+                <div id="view-timeline" class="hidden flex-1 flex flex-col text-left">
+                  <div class="border-b border-[#C5A880]/30 pb-2 mb-2">
+                    <span class="text-[9px] uppercase tracking-widest text-[#D4AF37] font-bold">Capítulo 07</span>
+                    <h4 class="text-xs font-bold text-white">O Protocolo de 12 Semanas</h4>
+                  </div>
+                  <div class="space-y-2 text-[10px]">
+                    <div class="border-l-2 border-[#C5A880] pl-2">
+                      <strong class="text-white">Fase 1: Ativação (Sem. 1-4)</strong>
+                      <p class="text-zinc-400 text-[9px]">Corte de ultraprocessados, 2 treinos/sem, meta: -1.5 a 2kg.</p>
+                    </div>
+                    <div class="border-l-2 border-blue-400 pl-2">
+                      <strong class="text-white">Fase 2: Aceleração (Sem. 5-8)</strong>
+                      <p class="text-zinc-400 text-[9px]">HIIT metabólico 2x/sem, meta: -2 a 3kg adicionais.</p>
+                    </div>
+                    <div class="border-l-2 border-orange-400 pl-2">
+                      <strong class="text-white">Fase 3: Transformação (Sem. 9-12)</strong>
+                      <p class="text-zinc-400 text-[9px]">Carb cycling, definição muscular profunda e consolidação.</p>
+                    </div>
+                  </div>
+                  <div class="mt-auto p-1.5 bg-[#D4AF37]/10 rounded border border-[#D4AF37]/30 text-center">
+                    <span class="text-[9px] font-bold text-[#E5C58B]">Meta Total: 6 a 8 kg de gordura eliminada</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Page edges effect -->
+              <div class="w-3.5 h-full bg-gradient-to-r from-[#17171d] via-[#2a2a35] to-[#121218] border-l border-zinc-800 shrink-0 flex flex-col justify-around py-4">
+                <div class="w-full h-[1px] bg-zinc-700/50"></div>
+                <div class="w-full h-[1px] bg-zinc-700/50"></div>
+                <div class="w-full h-[1px] bg-zinc-700/50"></div>
+                <div class="w-full h-[1px] bg-zinc-700/50"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3D Rotation Controls & Preview Tabs -->
+          <div class="mt-5 w-full flex flex-col items-center gap-2">
+            
+            <!-- Tab buttons -->
+            <div class="w-full flex items-center justify-center gap-1.5 p-1 rounded-xl bg-[#121217]/90 border border-[#D4AF37]/20 backdrop-blur-md shadow-md text-xs">
+              <button onclick="switchTab('cover')" id="btn-cover" class="px-3 py-1.5 rounded-lg font-bold bg-[#D4AF37] text-black">Capa</button>
+              <button onclick="switchTab('summary')" id="btn-summary" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white">Sumário</button>
+              <button onclick="switchTab('pillars')" id="btn-pillars" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white">3 Pilares</button>
+              <button onclick="switchTab('timeline')" id="btn-timeline" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white">12 Semanas</button>
+            </div>
+
+            <!-- 360 Spin & Ebook Link Controls -->
+            <div class="flex items-center gap-2 text-xs">
+              <button onclick="trigger360Spin()" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-[#D4AF37] text-zinc-300 hover:text-white flex items-center gap-1.5 transition-all">
+                <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Girar Livro 360°</span>
+              </button>
+
+              <a href="ebook-preview.html" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-[#D4AF37]/40 hover:border-[#D4AF37] text-[#E5C58B] hover:text-white flex items-center gap-1.5 transition-all font-semibold">
+                <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Abrir E-book Completo</span>
+              </a>
+            </div>
+
+            <p class="text-[11px] text-zinc-500 text-center">
+              Passe o mouse ou dedo sobre o livro para girar e interagir em 3D.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: O PROBLEMA ================= -->
+  <section id="problema" class="py-20 bg-[#0C0C10] border-y border-white/[0.06] relative">
+    <div class="parallax-layer absolute top-10 right-10 w-72 h-72 bg-red-950/20 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="0.2"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>A Realidade Oculta do Emagrecimento</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Por Que 95% Das Pessoas Que Fazem Dieta <span class="text-red-400">Recuperam Todo o Peso</span> em Menos de 2 Anos?
+        </h2>
+        <p class="text-base text-zinc-400 leading-relaxed">
+          Se você já tentou emagrecer várias vezes e acabou recuperando os quilos perdidos, o problema nunca esteve na sua força de vontade. O problema esteve no método que te venderam.
+        </p>
+      </div>
+
+      <!-- 3 Science Cards with Parallax Hover -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="reveal p-7 rounded-2xl bg-[#121217] border border-zinc-800 transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-1">
+          <div class="text-4xl font-black text-red-400 mb-2 font-mono">95%</div>
+          <h3 class="text-lg font-bold text-white mb-2">Biologia de Sobrevivência</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Seu corpo foi programado para sobreviver a períodos de escassez. Quando você corta calorias bruscamente, ele reduz o metabolismo e dispara a fome desesperadora para estocar gordura.
+          </p>
+        </div>
+
+        <div class="reveal p-7 rounded-2xl bg-[#121217] border border-zinc-800 transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-2">
+          <div class="text-4xl font-black text-[#D4AF37] mb-2 font-mono">Cortisol</div>
+          <h3 class="text-lg font-bold text-white mb-2">O Inimigo Oculto do Abdômen</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Dietas de fome e excesso de cardio elevam o cortisol a níveis crônicos. Cortisol elevado estimula o acúmulo de gordura visceral na barriga e degrada massa muscular magra.
+          </p>
+        </div>
+
+        <div class="reveal p-7 rounded-2xl bg-[#121217] border border-zinc-800 transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-3">
+          <div class="text-4xl font-black text-emerald-400 mb-2 font-mono">2x Mais</div>
+          <h3 class="text-lg font-bold text-white mb-2">Eficácia Com Método Estruturado</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Déficit calórico não é punição — é gestão estratégica. Há uma diferença colossal entre passar fome e ensinar o seu corpo a queimar gordura preservando tônus e saúde.
+          </p>
+        </div>
+      </div>
+
+      <!-- Comparison Box -->
+      <div class="reveal rounded-2xl bg-[#15151D] border border-[#D4AF37]/20 p-6 sm:p-10 shadow-2xl">
+        <div class="text-center mb-8">
+          <h3 class="text-xl sm:text-2xl font-bold text-white">A Diferença Entre Dietas da Moda e o Sistema LEANCODE</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-xl bg-red-950/20 border border-red-900/30">
+            <h4 class="text-red-400 font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Dietas Tradicionais da Moda
+            </h4>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>• Corte severo de calorias (passar fome o dia todo)</li>
+              <li>• Proibição de carboidratos, pães e jantares sociais</li>
+              <li>• Horas exaustivas de esteira diária desgastando articulações</li>
+              <li>• Cortisol elevado e destruição de massa muscular magra</li>
+              <li>• Efeito sanfona inevitável logo na 3ª ou 4ª semana</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-xl bg-[#1A1A24] border border-[#D4AF37]/40 shadow-lg">
+            <h4 class="text-[#E5C58B] font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              O Método LEANCODE
+            </h4>
+            <ul class="space-y-3 text-sm text-zinc-200">
+              <li>• Déficit flexível de 300 a 500 kcal sem passar fome</li>
+              <li>• Carboidratos inteligentes em torno dos treinos</li>
+              <li>• Apenas 2 a 3 treinos curtos de 30 minutos por semana</li>
+              <li>• Proteção hormonal e construção de tônus atlético</li>
+              <li>• 1 refeição livre semanal planejada sem culpa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center pt-6 border-t border-zinc-800">
+          <blockquote class="text-base sm:text-lg italic text-[#E5C58B] font-serif">
+            &ldquo;O seu corpo não precisa ser punido. Precisa ser ensinado.&rdquo;
+          </blockquote>
+          <p class="text-xs text-zinc-400 mt-1 uppercase tracking-widest font-mono">Capítulo 01 • LEANCODE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: OS 3 PILARES ================= -->
+  <section id="pilares" class="py-20 bg-[#09090D] relative">
+    <div class="parallax-layer absolute top-1/2 left-0 w-80 h-80 bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="0.18"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>A Arquitetura do Sucesso</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          O Método LEANCODE: <span class="gold-gradient-text">Os 3 Pilares Fundamentais</span>
+        </h2>
+        <p class="text-base text-zinc-400 leading-relaxed">
+          Uma abordagem integrada onde cada elemento apoia e potencializa o outro. Não existe improviso quando você tem a engenharia exata do corpo humano.
+        </p>
+      </div>
+
+      <!-- 3 Pillars Grid with Parallax Hover -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Pillar 1 -->
+        <div class="reveal rounded-2xl bg-[#121217] p-8 border border-[#C5A880]/30 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-1">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-[#C5A880]/40 bg-[#C5A880]/15 text-[#E5C58B] uppercase tracking-wider">Pilar I</span>
+            <h3 class="text-xl font-bold text-white mt-4 mb-2">Nutrição Estratégica Sem Restrições</h3>
+            <p class="text-xs font-medium text-[#C5A880] mb-4 italic">&ldquo;Comer menos não é a resposta. Comer melhor é.&rdquo;</p>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6">
+              Baseada em densidade nutricional, timing inteligente de macronutrientes e flexibilidade metabólica — sem cortar tudo o que você gosta.
+            </p>
+            <div class="space-y-2.5 pt-4 border-t border-zinc-800 text-xs text-zinc-300">
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Déficit flexível: 300-500 kcal abaixo do TDEE</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Proteína alta: 1.8 a 2.2g/kg para saciedade duradoura</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Timing de carboidratos em torno do treino</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>1 refeição livre semanal planejada sem culpa</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-4 border-t border-zinc-800 text-[11px] text-zinc-400 font-mono flex justify-between">
+            <span>ESTRATÉGIA</span>
+            <span class="text-white font-bold">Metabolismo Ativo</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="reveal rounded-2xl bg-[#121217] p-8 border border-blue-500/30 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-2">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-blue-500/40 bg-blue-500/15 text-blue-300 uppercase tracking-wider">Pilar II</span>
+            <h3 class="text-xl font-bold text-white mt-4 mb-2">Treino Eficiente & Menos Tempo</h3>
+            <p class="text-xs font-medium text-blue-300 mb-4 italic">&ldquo;Qualidade supera quantidade. Sempre.&rdquo;</p>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6">
+              2 a 3 treinos estruturados de 30 a 40 minutos por semana superam 6 dias exaustivos de cardio na esteira.
+            </p>
+            <div class="space-y-2.5 pt-4 border-t border-zinc-800 text-xs text-zinc-300">
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fim das horas infinitas de esteira</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Sobrecarga de 2.5% semanal (+70% do resultado)</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Preservação e definição muscular profunda</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Rotina adaptada para quem tem pouco tempo</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-4 border-t border-zinc-800 text-[11px] text-zinc-400 font-mono flex justify-between">
+            <span>ESTRATÉGIA</span>
+            <span class="text-white font-bold">Máxima Densidade</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="reveal rounded-2xl bg-[#121217] p-8 border border-orange-500/30 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-3">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-orange-500/40 bg-orange-500/15 text-orange-300 uppercase tracking-wider">Pilar III</span>
+            <h3 class="text-xl font-bold text-white mt-4 mb-2">Mentalidade de Sistema</h3>
+            <p class="text-xs font-medium text-orange-300 mb-4 italic">&ldquo;Motivação faz começar. Sistema mantém você.&rdquo;</p>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6">
+              A diferença entre quem alcança um físico magro e quem desiste não é genética: é o sistema de hábitos diários que você constrói.
+            </p>
+            <div class="space-y-2.5 pt-4 border-t border-zinc-800 text-xs text-zinc-300">
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Identidade precede o comportamento</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>80% de consistência bate a perfeição rápida</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Organização da geladeira e rotina sem desculpas</span></div>
+              <div class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fotos e energia importam mais que o peso na balança</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-4 border-t border-zinc-800 text-[11px] text-zinc-400 font-mono flex justify-between">
+            <span>ESTRATÉGIA</span>
+            <span class="text-white font-bold">Sem Efeito Sanfona</span>
+          </div>
+        </div>
+            <span>ESTRATÉGIA</span>
+            <span class="text-white font-bold">Sem Efeito Sanfona</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Meal Plan Preview from Book -->
+      <div class="reveal rounded-2xl bg-[#13131A] border border-[#D4AF37]/25 p-6 sm:p-8 max-w-4xl mx-auto shadow-2xl">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-zinc-800 pb-5 mb-6">
+          <div>
+            <span class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF37]">Extraído do Capítulo 03</span>
+            <h4 class="text-lg font-bold text-white mt-1">Exemplo Real de Dia Alimentar no Brasil</h4>
+          </div>
+          <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold">Densidade & Saciedade</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span class="text-[10px] font-mono text-[#D4AF37] block mb-1">07:00 • CAFÉ DA MANHÃ</span>
+            <p class="text-zinc-200">3 Ovos mexidos, tomate em cubos e café puro sem açúcar</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span class="text-[10px] font-mono text-[#D4AF37] block mb-1">10:30 • LANCHE</span>
+            <p class="text-zinc-200">Iogurte grego natural + punhado de castanhas</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span class="text-[10px] font-mono text-[#D4AF37] block mb-1">13:00 • ALMOÇO</span>
+            <p class="text-zinc-200">Filé de frango, batata-doce e salada farta com azeite</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span class="text-[10px] font-mono text-[#D4AF37] block mb-1">16:30 • PRÉ-TREINO</span>
+            <p class="text-zinc-200">Banana madura + 20g de proteína em pó</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span class="text-[10px] font-mono text-[#D4AF37] block mb-1">19:30 • JANTAR</span>
+            <p class="text-zinc-200">Salmão grelhado, brócolis no vapor e azeite extravirgem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CRONOGRAMA 12 SEMANAS ================= -->
+  <section id="cronograma" class="py-20 bg-[#0C0C10] border-t border-white/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Capítulo 07 • O Roteiro</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          O Código Das 12 Semanas: <span class="gold-gradient-text">Sua Rota Sem Desvios</span>
+        </h2>
+        <p class="text-base text-zinc-400 leading-relaxed">
+          O LEANCODE divide sua jornada em 3 fases complementares para que seu corpo continue queimando gordura sem nunca entrar em platô.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="reveal rounded-2xl bg-[#13131A] p-7 border border-[#C5A880]/30 shadow-xl flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-1">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-[#C5A880]/40 bg-[#C5A880]/15 text-[#E5C58B] uppercase">FASE 1 • Semanas 1–4</span>
+            <h3 class="text-2xl font-black text-white mt-4 mb-2">ATIVAÇÃO</h3>
+            <p class="text-xs text-zinc-300 mb-4">Eliminar inflamação e reativar a queima de gordura basal.</p>
+            <ul class="space-y-2 text-xs text-zinc-300 pt-3 border-t border-zinc-800">
+              <li>✓ Eliminação de alimentos ultraprocessados</li>
+              <li>✓ 2 treinos de força estruturados por semana</li>
+              <li>✓ Meta proteica de 1.8g por kg corporal</li>
+            </ul>
+          </div>
+          <div class="mt-6 p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-center font-bold text-xs text-[#E5C58B]">
+            Meta: -1.5 a -2 kg eliminados
+          </div>
+        </div>
+
+        <div class="reveal rounded-2xl bg-[#13131A] p-7 border border-blue-500/30 shadow-xl flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-2">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-blue-500/40 bg-blue-500/15 text-blue-300 uppercase">FASE 2 • Semanas 5–8</span>
+            <h3 class="text-2xl font-black text-white mt-4 mb-2">ACELERAÇÃO</h3>
+            <p class="text-xs text-zinc-300 mb-4">Amplificar gasto calórico e condicionamento metabólico.</p>
+            <ul class="space-y-2 text-xs text-zinc-300 pt-3 border-t border-zinc-800">
+              <li>✓ Introdução de estímulos curtos HIIT 2x/sem</li>
+              <li>✓ Ajuste fino no déficit calórico</li>
+              <li>✓ Suplementação de Magnésio, Vit D e Ômega-3</li>
+            </ul>
+          </div>
+          <div class="mt-6 p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-center font-bold text-xs text-blue-300">
+            Meta: -2 a -3 kg adicionais de gordura
+          </div>
+        </div>
+
+        <div class="reveal rounded-2xl bg-[#13131A] p-7 border border-orange-500/30 shadow-xl flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-3">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold border border-orange-500/40 bg-orange-500/15 text-orange-300 uppercase">FASE 3 • Semanas 9–12</span>
+            <h3 class="text-2xl font-black text-white mt-4 mb-2">TRANSFORMAÇÃO</h3>
+            <p class="text-xs text-zinc-300 mb-4">Esculpir tônus muscular e consolidar um físico magro definitivo.</p>
+            <ul class="space-y-2 text-xs text-zinc-300 pt-3 border-t border-zinc-800">
+              <li>✓ Protocolo avançado com sobrecarga progressiva</li>
+              <li>✓ Ciclagem de carboidratos (Carb Cycling)</li>
+              <li>✓ Transição para protocolo de manutenção</li>
+            </ul>
+          </div>
+          <div class="mt-6 p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-center font-bold text-xs text-orange-300">
+            Resultado Total: 6 a 8 kg de gordura perdida
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal rounded-2xl bg-gradient-to-r from-[#17140B] via-[#211A0D] to-[#17140B] border border-[#D4AF37]/40 p-6 sm:p-8 text-center max-w-3xl mx-auto shadow-2xl shimmer-card">
+        <h4 class="text-lg font-bold text-white mb-2">Resultado Médio Esperado ao Fim das 12 Semanas:</h4>
+        <p class="text-2xl sm:text-3xl font-extrabold gold-gradient-text font-mono mb-2">6 a 8 kg de Gordura Eliminada</p>
+        <p class="text-sm text-zinc-300">Mais do que o peso na balança: tônus preservado e composição corporal visivelmente diferente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: OS 10 CAPÍTULOS ================= -->
+  <section id="capitulos" class="py-20 bg-[#09090D]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>O Que Você Vai Aprender</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Raio-X Dos 10 Capítulos do <span class="gold-gradient-text">LEANCODE</span>
+        </h2>
+        <p class="text-base text-zinc-400 leading-relaxed">
+          Mais de 170 páginas de método direto ao ponto. Sem enrolação teórica, apenas instruções práticas para seu corpo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12">
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">01</span>
+          <div>
+            <h3 class="font-bold text-white text-base">A Verdade Sobre o Emagrecimento <span class="text-zinc-500 font-mono text-xs">(p. 12)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">Por que 95% das dietas falham, o papel do cortisol crônico e a diferença entre fome e déficit estratégico.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">02</span>
+          <div>
+            <h3 class="font-bold text-white text-base">O Método LEANCODE — Os 3 Pilares <span class="text-zinc-500 font-mono text-xs">(p. 24)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">A arquitetura integrada: Nutrição Estratégica, Treino Eficiente e Mentalidade de Atleta.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">03</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Nutrição Estratégica Sem Restrições <span class="text-zinc-500 font-mono text-xs">(p. 38)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">Déficit flexível, aporte proteico inteligente, timing de carboidratos e refeição livre semanal.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">04</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Treino Eficiente: Menos Tempo, Mais Resultado <span class="text-zinc-500 font-mono text-xs">(p. 56)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">O protocolo de 2 a 3 treinos semanais e a regra de sobrecarga de 2.5% contínua.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">05</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Metabolismo e Hormônios: A Ciência Real <span class="text-zinc-500 font-mono text-xs">(p. 72)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">Como colocar cortisol, insulina, leptina e grelina para queimar gordura a seu favor.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">06</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Mentalidade de Atleta <span class="text-zinc-500 font-mono text-xs">(p. 88)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">Identidade primeiro, consistência de 80% sobre perfeição e organização do ambiente.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">07</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Plano de 12 Semanas Completo <span class="text-zinc-500 font-mono text-xs">(p. 104)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">O cronograma dia a dia das Fases de Ativação, Aceleração e Transformação Corporal.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">08</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Receitas e Refeições Práticas Premium <span class="text-zinc-500 font-mono text-xs">(p. 126)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">Cardápios fáceis e saborosos de fazer com ingredientes comuns de supermercado.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">09</span>
+          <div>
+            <h3 class="font-bold text-white text-base">Manutenção: Como Nunca Voltar ao Peso <span class="text-zinc-500 font-mono text-xs">(p. 148)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">A chave para consolidar o novo peso e nunca mais vivenciar o efeito sanfona.</p>
+          </div>
+        </div>
+
+        <div class="reveal p-5 rounded-xl bg-[#121217] border border-zinc-800 flex gap-4">
+          <span class="text-xl font-black text-[#D4AF37] font-mono shrink-0">10</span>
+          <div>
+            <h3 class="font-bold text-white text-base">O Código Final — A Tua Transformação <span class="text-zinc-500 font-mono text-xs">(p. 162)</span></h3>
+            <p class="text-xs text-zinc-400 mt-1">A consolidação do método e o início de uma vida com tônus, vitalidade e autoconfiança.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: AVALIAÇÕES DE LEITORES ================= -->
+  <section id="avaliacoes" class="py-20 bg-[#0C0C10] border-y border-white/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Feedback de Quem Aplicou o Método</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Avaliações de Leitores do <span class="gold-gradient-text">LEANCODE</span>
+        </h2>
+        <p class="text-base text-zinc-400">
+          Veja o que leitores que colocaram o código em prática têm a dizer sobre o material:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="reveal p-6 rounded-2xl bg-[#121217] border border-zinc-800 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div class="flex items-center gap-1 text-[#D4AF37] mb-3">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed italic mb-4">
+              &ldquo;Eu comprei o ebook e super recomendo! O que mais me surpreendeu foi a clareza sobre o cortisol e como eu estava estragando meu metabolismo com cardio demais. Eliminei 7 kg em 9 semanas com apenas 3 treinos curtos por semana.&rdquo;
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex items-center justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-white">Rodrigo Albuquerque</h4>
+              <span class="text-[11px] text-zinc-400">São Paulo, SP</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold">Compra Verificada</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reveal p-6 rounded-2xl bg-[#121217] border border-zinc-800 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div class="flex items-center gap-1 text-[#D4AF37] mb-3">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed italic mb-4">
+              &ldquo;Excelente livro. O Pilar de Nutrição Estratégica é impecável porque não corta carboidratos. Continuei comendo arroz e batata, fiz a refeição livre no sábado e minha barriga secou de verdade. Vale muito mais do que $7.&rdquo;
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex items-center justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-white">Camila F. Meireles</h4>
+              <span class="text-[11px] text-zinc-400">Belo Horizonte, MG</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold">Compra Verificada</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal p-6 rounded-2xl bg-[#121217] border border-zinc-800 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div class="flex items-center gap-1 text-[#D4AF37] mb-3">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed italic mb-4">
+              &ldquo;Comprei sem muita expectativa por ser tão barato, mas o conteúdo é nível de mentoria cara. O cronograma de 12 semanas é super prático, você sabe exatamente o que fazer em cada fase. Super recomendo a leitura!&rdquo;
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex items-center justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-white">Lucas Zanin</h4>
+              <span class="text-[11px] text-zinc-400">Curitiba, PR</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold">Compra Verificada</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: PARA QUEM É ================= -->
+  <section id="publico" class="py-20 bg-[#09090D]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">Este Método É Para Você?</h2>
+        <p class="text-base text-zinc-400">Transparência total sobre quem terá resultados reais com o LEANCODE.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="reveal p-8 rounded-2xl bg-[#131713] border border-emerald-500/30">
+          <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2 text-emerald-400">
+            <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            O LEANCODE É Para Você Se:
+          </h3>
+          <ul class="space-y-4 text-sm text-zinc-200">
+            <li>• Cansou de dietas extremas e do terrível efeito sanfona.</li>
+            <li>• Tem uma rotina corrida e só pode treinar 30-40 minutos 2 a 3x por semana.</li>
+            <li>• Quer emagrecer sem parar de almoçar com sua família e amigos.</li>
+            <li>• Busca perder gordura preservando o tônus e a firmeza muscular.</li>
+            <li>• Valoriza ciência comprovada ao invés de modismos passageiros.</li>
+          </ul>
+        </div>
+
+        <div class="reveal p-8 rounded-2xl bg-[#191313] border border-red-500/30">
+          <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2 text-red-400">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            O LEANCODE NÃO É Para Você Se:
+          </h3>
+          <ul class="space-y-4 text-sm text-zinc-300">
+            <li>• Está procurando pílulas mágicas ou emagrecimento milagroso em 48 horas.</li>
+            <li>• Acredita que passar fome extrema é o único jeito de secar.</li>
+            <li>• Não está disposto a ler o manual e colocar as instruções em prática.</li>
+            <li>• Prefere culpar a genética em vez de seguir um método consistente.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: 3 BÔNUS GRATUITOS ================= -->
+  <section class="py-20 bg-[#0C0C10] border-t border-white/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#E5C58B] text-xs font-semibold uppercase tracking-wider mb-4">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg>
+          <span>Presentes Inclusos Hoje</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Acelere Seus Resultados Com <span class="gold-gradient-text">3 Bônus Gratuitos</span>
+        </h2>
+        <p class="text-base text-zinc-400">Ao garantir seu acesso hoje de $15 por apenas $7, você desbloqueia imediatamente:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="reveal rounded-2xl bg-[#121217] p-7 border border-[#D4AF37]/25 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-1">
+          <div>
+            <span class="text-[10px] font-mono font-bold text-[#D4AF37] uppercase">BÔNUS EXCLUSIVO #1</span>
+            <h3 class="text-lg font-bold text-white mt-1 mb-3">Guia de Refeições Rápidas & Exemplos Diários</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Opções práticas de café, almoço e jantar de alto valor proteico prontas em menos de 15 minutos.</p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex justify-between items-center text-xs mt-6">
+            <span class="text-emerald-400 font-bold flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              GRÁTIS HOJE
+            </span>
+            <span class="line-through text-zinc-500">US$ 19</span>
+          </div>
+        </div>
+
+        <div class="reveal rounded-2xl bg-[#121217] p-7 border border-[#D4AF37]/25 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-2">
+          <div>
+            <span class="text-[10px] font-mono font-bold text-[#D4AF37] uppercase">BÔNUS EXCLUSIVO #2</span>
+            <h3 class="text-lg font-bold text-white mt-1 mb-3">Planilha de Sobrecarga Progressiva (+2.5%)</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Ferramenta prática para aplicar a regra dos 2.5% de evolução e acompanhar fotos e medidas corporais.</p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex justify-between items-center text-xs mt-6">
+            <span class="text-emerald-400 font-bold flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              GRÁTIS HOJE
+            </span>
+            <span class="line-through text-zinc-500">US$ 17</span>
+          </div>
+        </div>
+
+        <div class="reveal rounded-2xl bg-[#121217] p-7 border border-[#D4AF37]/25 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-2 shimmer-card shimmer-delay-3">
+          <div>
+            <span class="text-[10px] font-mono font-bold text-[#D4AF37] uppercase">BÔNUS EXCLUSIVO #3</span>
+            <h3 class="text-lg font-bold text-white mt-1 mb-3">Protocolo Anti-Cortisol & Sono Reparador</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Estratégias cientificamente testadas para baixar o cortisol e queimar gordura enquanto descansa.</p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800 flex justify-between items-center text-xs mt-6">
+            <span class="text-emerald-400 font-bold flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              GRÁTIS HOJE
+            </span>
+            <span class="line-through text-zinc-500">US$ 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CARTA DO AUTOR ================= -->
+  <section class="py-20 bg-[#09090D]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="reveal rounded-2xl bg-[#121217] border border-[#D4AF37]/30 p-8 sm:p-12 shadow-2xl">
+        <span class="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block mb-4">
+          Introdução Oficial • Uma Carta Para Você
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">
+          &ldquo;Este não é um livro de motivação. É um manual de instruções para o seu corpo.&rdquo;
+        </h3>
+        <div class="space-y-4 text-sm sm:text-base text-zinc-300 leading-relaxed">
+          <p>Se você chegou até aqui, é porque já tentou. Dietas que prometiam tudo e entregavam fome e frustração. Treinos que abandonou depois de semanas. A sensação de que o problema é sua força de vontade ou genética.</p>
+          <p class="text-white font-semibold">Não é. O problema está no método. Ou melhor: na ausência dele.</p>
+          <p>O LEANCODE é um protocolo construído estritamente sobre a ciência biológica do corpo humano — sem modismos e sem promessas vazias. Você vai entender por que o corpo acumula gordura e quais os mecanismos exatos para mudar isso de forma permanente.</p>
+          <p class="text-[#E5C58B] italic">Bem-vindo ao seu código. Quem tem método não improvisa. E não desiste.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div>
+            <h4 class="text-white font-bold text-sm">O Autor</h4>
+            <p class="text-xs text-[#C5A880]">Especialista em Transformação Corporal & Nutrição Funcional</p>
+          </div>
+          <span class="text-xs text-zinc-400 font-mono">LEANCODE • O Método. Não a Moda.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: O ÚNICO LOCAL COM CHECKOUT HOTMART & TEMPORIZADOR ================= -->
+  <section id="oferta" class="py-20 bg-[#0C0C10] border-t border-white/[0.06] relative">
+    <div class="parallax-layer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="0.2"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center mb-12">
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          Comece Sua Transformação <span class="gold-gradient-text">Hoje</span>
+        </h2>
+        <p class="text-base text-zinc-400">Tenha acesso completo e vitalício ao protocolo pelo menor valor da história.</p>
+      </div>
+
+      <!-- Main Checkout Card with Interactive Timer -->
+      <div class="reveal rounded-3xl bg-[#13131A] border-2 border-[#D4AF37]/50 p-6 sm:p-10 shadow-[0_0_50px_rgba(212,175,55,0.25)] relative overflow-hidden">
+        
+        <!-- Timer Badge integrated directly inside Checkout Section -->
+        <div class="mb-8 p-4 rounded-2xl bg-gradient-to-r from-red-950/40 via-zinc-900 to-red-950/40 border border-red-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0">
+              <svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-red-400 uppercase tracking-wider block">CONDIÇÃO PROMOCIONAL LIMITADA</span>
+              <p class="text-xs text-zinc-300">O preço voltará para o valor padrão de $15 assim que o cronômetro zerar.</p>
+            </div>
+          </div>
+
+          <!-- Countdown Boxes -->
+          <div class="flex items-center gap-2 font-mono">
+            <div class="flex flex-col items-center justify-center bg-black/80 border border-[#D4AF37]/40 rounded-xl px-3 py-1.5 min-w-[54px]">
+              <span id="timer-min" class="text-xl font-black text-white">14</span>
+              <span class="text-[9px] text-zinc-400 uppercase font-sans">Min</span>
+            </div>
+            <span class="text-[#D4AF37] font-bold text-lg">:</span>
+            <div class="flex flex-col items-center justify-center bg-black/80 border border-[#D4AF37]/40 rounded-xl px-3 py-1.5 min-w-[54px]">
+              <span id="timer-sec" class="text-xl font-black text-[#D4AF37]">59</span>
+              <span class="text-[9px] text-zinc-400 uppercase font-sans">Seg</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- What you get -->
+          <div class="lg:col-span-7 space-y-3 text-xs sm:text-sm text-zinc-200">
+            <h3 class="text-xl font-bold text-white mb-2">Tudo o Que Você Recebe:</h3>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>E-book LEANCODE Completo:</strong> 10 capítulos (170+ páginas em PDF de alta qualidade)</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>O Protocolo de 12 Semanas:</strong> Roteiro Ativação, Aceleração e Transformação</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Bônus #1:</strong> Guia de Refeições Rápidas & Cardápios Práticos</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Bônus #2:</strong> Planilha de Sobrecarga Progressiva (+2.5%)</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Bônus #3:</strong> Protocolo Anti-Cortisol de Sono Profundo</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+              <svg class="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Acesso Vitalício:</strong> Leia no celular, tablet ou computador</span>
+            </div>
+          </div>
+
+          <!-- The ONLY direct Hotmart checkout link on the entire website -->
+          <div class="lg:col-span-5 flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl">
+            
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/30 text-[10px] font-bold uppercase mb-2">
+              Economia de Mais de 50%
+            </div>
+
+            <div class="my-2">
+              <div class="text-xs text-zinc-400 mb-1">
+                Antes: <span class="line-through text-red-400 font-bold text-sm">$15</span>
+              </div>
+              
+              <div class="text-xs text-zinc-400">Agora Por Apenas:</div>
+              <div class="text-5xl font-black text-white font-mono flex items-baseline justify-center gap-1 my-1">
+                <span class="text-2xl font-bold text-[#D4AF37]">$</span>
+                <span>7</span>
+              </div>
+              <span class="text-xs text-[#E5C58B] block font-medium">(aprox. R$ 39 no Brasil)</span>
+              <span class="text-[11px] text-zinc-400 block mt-0.5">Pagamento via PIX, Cartão ou Boleto</span>
+            </div>
+
+            <!-- THE ONE AND ONLY HOTMART CHECKOUT BUTTON -->
+            <a href="https://go.hotmart.com/T105936596S?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-extrabold text-sm uppercase tracking-wider gold-btn text-black transition-all mt-3">
+              <span>IR PARA O CHECKOUT DA HOTMART</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <div class="mt-4 flex flex-col items-center gap-1 text-[11px] text-zinc-400">
+              <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Garantia Incondicional de 7 Dias
+              </span>
+              <span>Ambiente 100% Criptografado Hotmart</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: GARANTIA 7 DIAS ================= -->
+  <section class="py-16 bg-[#09090D] border-t border-white/[0.06]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="reveal rounded-2xl bg-[#121217] border border-[#D4AF37]/30 p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8 shadow-xl">
+        <div class="w-24 h-24 rounded-full border-2 border-[#D4AF37] flex flex-col items-center justify-center shrink-0 shadow-lg bg-[#D4AF37]/10">
+          <svg class="w-8 h-8 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="text-[10px] font-black uppercase text-[#E5C58B] tracking-wider mt-1">7 DIAS</span>
+        </div>
+        <div class="text-center sm:text-left">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Teste o LEANCODE Por 7 Dias Sem Risco</h3>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+            Baixe o e-book, leia os 10 capítulos e teste os treinos. Se achar que não valeu a pena, basta solicitar o reembolso na plataforma Hotmart com 1 clique.
+          </p>
+          <p class="text-xs font-semibold text-[#E5C58B]">Devolvemos 100% do seu dinheiro sem burocracias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: FAQ ================= -->
+  <section id="faq" class="py-20 bg-[#0C0C10] border-t border-white/[0.06]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="reveal text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">Perguntas Frequentes</h2>
+        <p class="text-base text-zinc-400">Tudo o que você precisa saber antes de adquirir o LEANCODE.</p>
+      </div>
+
+      <div class="space-y-4 mb-12">
+        <details class="reveal group rounded-xl border border-zinc-800 bg-[#121217] p-5 cursor-pointer">
+          <summary class="font-bold text-white group-hover:text-[#E5C58B] flex justify-between items-center text-sm sm:text-base">
+            Como recebo o acesso ao e-book após a compra?
+            <svg class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            O acesso é imediato! Assim que seu pagamento for aprovado pela Hotmart, você recebe os links de download direto em seu e-mail para abrir em qualquer celular, computador ou tablet.
+          </p>
+        </details>
+
+        <details class="reveal group rounded-xl border border-zinc-800 bg-[#121217] p-5 cursor-pointer">
+          <summary class="font-bold text-white group-hover:text-[#E5C58B] flex justify-between items-center text-sm sm:text-base">
+            O valor de $7 é mensalidade ou pagamento único?
+            <svg class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            Pagamento único! Não existem cobranças recorrentes nem assinaturas ocultas. Você paga uma única vez e o acesso ao material e aos 3 bônus é vitalício.
+          </p>
+        </details>
+
+        <details class="reveal group rounded-xl border border-zinc-800 bg-[#121217] p-5 cursor-pointer">
+          <summary class="font-bold text-white group-hover:text-[#E5C58B] flex justify-between items-center text-sm sm:text-base">
+            Moro no Brasil, posso pagar em Reais (PIX ou Cartão)?
+            <svg class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            Sim! A Hotmart faz a conversão automática para reais no momento do checkout (ficando em torno de R$ 39) e disponibiliza pagamentos por PIX, Cartão de Crédito ou Boleto.
+          </p>
+        </details>
+
+        <details class="reveal group rounded-xl border border-zinc-800 bg-[#121217] p-5 cursor-pointer">
+          <summary class="font-bold text-white group-hover:text-[#E5C58B] flex justify-between items-center text-sm sm:text-base">
+            Não tenho tempo para treinar todo dia. Funciona para mim?
+            <svg class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            Foi criado exatamente para você. O Pilar II do LEANCODE baseia-se em apenas 2 a 3 treinos curtos semanais de 30 minutos com progressão de carga, superando horas de esteira.
+          </p>
+        </details>
+
+        <details class="reveal group rounded-xl border border-zinc-800 bg-[#121217] p-5 cursor-pointer">
+          <summary class="font-bold text-white group-hover:text-[#E5C58B] flex justify-between items-center text-sm sm:text-base">
+            Vou ter que passar fome ou cortar o carboidrato?
+            <svg class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            Não! O déficit flexível é suave (300 a 500 kcal), preserva seu metabolismo e inclui carboidratos bem distribuídos e 1 refeição livre semanal planejada.
+          </p>
+        </details>
+      </div>
+
+      <div class="reveal text-center">
+        <a href="#oferta" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider border border-[#D4AF37]/50 text-[#E5C58B] hover:bg-[#D4AF37]/10 transition-all">
+          <span>IR PARA A OFERTA COM O TEMPORIZADOR</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-[#070709] border-t border-white/[0.08] py-12 text-zinc-400 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-4">
+      <div class="flex items-center justify-center gap-2">
+        <span class="font-bold text-white text-base">LEANCODE</span>
+        <span class="text-[#D4AF37]">• O Método. Não a Moda.</span>
+      </div>
+      <p class="text-[11px] text-zinc-500 max-w-xl mx-auto">
+        Aviso Legal: Os resultados podem variar de acordo com o metabolismo e dedicação individual. As informações aqui contidas possuem caráter educacional e prático e não substituem o acompanhamento médico individualizado.
+      </p>
+      <p class="text-[11px] text-zinc-600">
+        &copy; <script>document.write(new Date().getFullYear())</script> LEANCODE. Todos os direitos reservados. leancode.com
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT: ROTATION, PARALLAX & COUNTDOWN ================= -->
+  <script>
+    // Tab switching inside book
+    function switchTab(tab) {
+      const views = ['cover', 'summary', 'pillars', 'timeline'];
+      views.forEach(v => {
+        const el = document.getElementById('view-' + v);
+        const btn = document.getElementById('btn-' + v);
+        if (v === tab) {
+          el.classList.remove('hidden');
+          btn.className = 'px-3 py-1.5 rounded-lg font-bold bg-[#D4AF37] text-black shadow-sm';
+        } else {
+          el.classList.add('hidden');
+          btn.className = 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white';
+        }
+      });
+    }
+
+    // 360 Spin Trigger
+    function trigger360Spin() {
+      const book = document.getElementById('rotating-book');
+      book.classList.remove('animate-spin-ebook');
+      book.classList.add('spin-360-active');
+      setTimeout(() => {
+        book.classList.remove('spin-360-active');
+        book.classList.add('animate-spin-ebook');
+      }, 2500);
+    }
+
+    // Interactive 3D Rotation on Mouse Move over Book
+    const interactiveArea = document.getElementById('book-interactive-area');
+    const rotatingBook = document.getElementById('rotating-book');
+    const specularLight = document.getElementById('specular-light');
+
+    if (interactiveArea && rotatingBook) {
+      interactiveArea.addEventListener('mousemove', (e) => {
+        const rect = interactiveArea.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate tilt degrees
+        const rotateY = ((x - centerX) / centerX) * 35; // -35 to +35 deg
+        const rotateX = -((y - centerY) / centerY) * 20; // -20 to +20 deg
+        
+        rotatingBook.classList.remove('animate-spin-ebook');
+        rotatingBook.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-8px)`;
+        
+        // Dynamic specular glare reflection
+        const lightX = (x / rect.width) * 100;
+        const lightY = (y / rect.height) * 100;
+        specularLight.style.background = `radial-gradient(circle at ${lightX}% ${lightY}%, rgba(255,255,255,0.14) 0%, transparent 60%)`;
+      });
+
+      interactiveArea.addEventListener('mouseleave', () => {
+        rotatingBook.style.transform = '';
+        rotatingBook.classList.add('animate-spin-ebook');
+        specularLight.style.background = '';
+      });
+    }
+
+    // SMOOTH SCROLL PARALLAX ENGINE
+    function handleParallax() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const parallaxLayers = document.querySelectorAll('.parallax-layer');
+      
+      parallaxLayers.forEach(layer => {
+        const speed = parseFloat(layer.getAttribute('data-parallax-speed')) || 0.2;
+        const yOffset = scrollY * speed;
+        layer.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(handleParallax);
+    }, { passive: true });
+
+    // Scroll Reveal Animation (Text & Cards rising from bottom)
+    function handleScrollReveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 90;
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScrollReveal, { passive: true });
+    window.addEventListener('load', () => {
+      handleScrollReveal();
+      handleParallax();
+    });
+
+    // Realtime Countdown Timer (14 minutes 59 seconds)
+    let totalSeconds = 14 * 60 + 59;
+    
+    function updateCountdown() {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      
+      const formattedMin = String(minutes).padStart(2, '0');
+      const formattedSec = String(seconds).padStart(2, '0');
+      
+      const topBarDisplays = document.querySelectorAll('.timer-display');
+      topBarDisplays.forEach(el => {
+        el.textContent = `${formattedMin}:${formattedSec}`;
+      });
+      
+      const minEl = document.getElementById('timer-min');
+      const secEl = document.getElementById('timer-sec');
+      if (minEl && secEl) {
+        minEl.textContent = formattedMin;
+        secEl.textContent = formattedSec;
+      }
+      
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        totalSeconds = 15 * 60;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
